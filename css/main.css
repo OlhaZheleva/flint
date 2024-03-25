@@ -267,7 +267,6 @@ span {
   aspect-ratio: 1.98/1;
   width: 100%;
   position: relative;
-  padding-top: 170px;
   overflow: hidden;
   transition: all 1s ease;
   z-index: 1;
@@ -310,6 +309,7 @@ span {
   position: relative;
   padding: 29% 60px 50px;
   display: flex;
+  height: 100%;
 }
 .primary .primary__container .primary__animation-items .state {
   position: absolute;
@@ -318,17 +318,62 @@ span {
 .primary .primary__container .primary__animation-items .animation-state_mob {
   display: none;
 }
+.primary .primary__container .primary__central_phrase {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 24vw;
+  height: auto;
+  max-width: 352px;
+  max-height: 281px;
+  z-index: 20;
+}
+.primary .primary__container .primary__central_phrase .primary__pic {
+  width: 100%;
+  height: 100%;
+}
+.primary .primary__container .primary__boxes {
+  display: flex;
+  gap: 5px;
+  align-self: flex-end;
+  position: relative;
+  z-index: 8;
+}
+.primary .primary__container .primary__boxes .box-item {
+  border-radius: 10px;
+  background: rgb(255, 255, 255);
+  padding: 10px 14px;
+  width: 8vw;
+  max-width: 79px;
+  height: auto;
+  max-height: 78px;
+}
+.primary .primary__container .primary__boxes .box-item img {
+  width: 100%;
+  height: 100%;
+}
 
 .primary1 {
   background: url("../images/primary-background-img.webp");
 }
+.primary1 .primary__container .primary__beauty-screen {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
 .primary1 .primary__container .primary__beauty-screen .primary__beauty {
   position: absolute;
   left: 0;
-  top: 35%;
+  top: 0;
   z-index: 6;
   width: 100%;
-  transform: translate(0%, -50%);
+  height: 100%;
   pointer-events: none;
 }
 .primary1 .primary__container .primary__beauty-screen .primary__animation-items.items1 .animation-state1 {
@@ -402,54 +447,24 @@ span {
   left: 3%;
   transform: translate(100%, 50%);
 }
-.primary1 .primary__container .primary__central_phrase {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: absolute;
-  top: 20%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 24vw;
-  height: auto;
-  max-width: 352px;
-  max-height: 281px;
-}
-.primary1 .primary__container .primary__central_phrase .primary__pic {
-  width: 100%;
-  height: 100%;
-}
-.primary1 .primary__container .primary__boxes {
-  display: flex;
-  gap: 5px;
-  align-self: flex-end;
-  position: relative;
-  z-index: 8;
-}
-.primary1 .primary__container .primary__boxes .box-item {
-  border-radius: 10px;
-  background: rgb(255, 255, 255);
-  padding: 10px 14px;
-  width: 8vw;
-  max-width: 79px;
-  height: auto;
-  max-height: 78px;
-}
-.primary1 .primary__container .primary__boxes .box-item img {
-  width: 100%;
-  height: 100%;
-}
 
 .primary2 {
   background: url("../images/primary-background-img2.webp");
 }
+.primary2 .primary__container .primary__gym-screen {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
 .primary2 .primary__container .primary__gym-screen .primary__gym {
   position: absolute;
   left: 0;
-  top: 35%;
+  top: 0;
   z-index: 6;
   width: 100%;
-  transform: translate(0%, -50%);
+  height: 100%;
   pointer-events: none;
 }
 .primary2 .primary__container .primary__gym-screen .primary__animation-items.items1 .animation-state1 {
@@ -524,55 +539,24 @@ span {
   left: 3%;
   transform: translate(100%, 50%);
 }
-.primary2 .primary__container .primary__central_phrase {
-  z-index: 6;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: absolute;
-  top: 20%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 24vw;
-  height: auto;
-  max-width: 352px;
-  max-height: 281px;
-}
-.primary2 .primary__container .primary__central_phrase .primary__pic {
-  width: 100%;
-  height: 100%;
-}
-.primary2 .primary__container .primary__boxes {
-  display: flex;
-  gap: 5px;
-  align-self: flex-end;
-  position: relative;
-  z-index: 8;
-}
-.primary2 .primary__container .primary__boxes .box-item {
-  border-radius: 10px;
-  background: rgb(255, 255, 255);
-  padding: 10px 14px;
-  width: 8vw;
-  max-width: 79px;
-  height: auto;
-  max-height: 78px;
-}
-.primary2 .primary__container .primary__boxes .box-item img {
-  width: 100%;
-  height: 100%;
-}
 
 .primary3 {
   background: url("../images/primary-background-img3.webp");
 }
+.primary3 .primary__container .primary__movers-screen {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
 .primary3 .primary__container .primary__movers-screen .primary__movers {
   position: absolute;
   left: 0;
-  top: 35%;
+  top: 0;
   z-index: 6;
   width: 100%;
-  transform: translate(0%, -50%);
+  height: 100%;
   pointer-events: none;
 }
 .primary3 .primary__container .primary__movers-screen .primary__animation-items.items1 .animation-state1 {
@@ -646,44 +630,6 @@ span {
   bottom: 17%;
   left: 3%;
   transform: translate(100%, 50%);
-}
-.primary3 .primary__container .primary__central_phrase {
-  z-index: 6;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: absolute;
-  top: 20%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 24vw;
-  height: auto;
-  max-width: 352px;
-  max-height: 281px;
-}
-.primary3 .primary__container .primary__central_phrase .primary__pic {
-  width: 100%;
-  height: 100%;
-}
-.primary3 .primary__container .primary__boxes {
-  display: flex;
-  gap: 5px;
-  align-self: flex-end;
-  position: relative;
-  z-index: 8;
-}
-.primary3 .primary__container .primary__boxes .box-item {
-  border-radius: 10px;
-  background: rgb(255, 255, 255);
-  padding: 10px 14px;
-  width: 8vw;
-  max-width: 79px;
-  height: auto;
-  max-height: 78px;
-}
-.primary3 .primary__container .primary__boxes .box-item img {
-  width: 100%;
-  height: 100%;
 }
 
 .second {
