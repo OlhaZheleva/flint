@@ -143,8 +143,7 @@ window.addEventListener("load", () => {
   randonScreen();
 });
 
-randonScreenBtn.addEventListener("click", function (event) {
-    event.preventDefault();
+randonScreenBtn.addEventListener("click", function () {
     randonScreen();
 });
 

@@ -267,6 +267,7 @@ span {
   overflow: hidden;
   transition: all 1s ease;
   display: none;
+  z-index: 1;
 }
 .primary .primary__beauty_mobile,
 .primary .primary__gym_mobile,
@@ -293,7 +294,7 @@ span {
   transform: scaleY(0);
 }
 .primary.fill-back::before {
-  height: 100%;
+  height: 110%;
   display: block;
   transform: scaleY(1);
   transform-origin: bottom;
@@ -680,6 +681,12 @@ span {
   height: 100%;
 }
 
+.second {
+  margin-top: -10px;
+  position: relative;
+  z-index: 3;
+  overflow: hidden;
+}
 .second .second__container {
   background: rgb(244, 237, 220);
   position: relative;
@@ -977,7 +984,7 @@ span {
     left: 2%;
   }
   .primary1 .primary__container .primary__beauty-screen .primary__animation-items.items1 .animation-state2 {
-    z-index: 5;
+    z-index: 20;
     bottom: 12%;
     left: 14%;
     transform: translate(-100%, -100%);
@@ -1001,7 +1008,7 @@ span {
     left: 34%;
   }
   .primary1 .primary__container .primary__beauty-screen .primary__animation-items.items2 .animation-state2 {
-    z-index: 5;
+    z-index: 20;
     transform: translate(100%, 50%);
     bottom: 8%;
     left: 34%;
@@ -1025,7 +1032,7 @@ span {
     right: 2%;
   }
   .primary1 .primary__container .primary__beauty-screen .primary__animation-items.items3 .animation-state2 {
-    z-index: 5;
+    z-index: 20;
     transform: translate(0%, 0%);
     bottom: 23%;
     right: 0%;
@@ -1180,12 +1187,12 @@ span {
   }
   .primary1 .primary__container .primary__beauty-screen .primary__animation-items.items1 .animation-state1 {
     z-index: 5;
-    top: 4%;
-    left: 62%;
+    top: 0%;
+    left: calc(56% + 2vw);
     transform: translate(100%, 100%);
   }
   .primary1 .primary__container .primary__beauty-screen .primary__animation-items.items1 .animation-state2 {
-    z-index: 5;
+    z-index: 20;
     top: 0%;
     left: 60%;
     transform: translate(100%, 50%);
@@ -1205,7 +1212,7 @@ span {
   .primary1 .primary__container .primary__beauty-screen .primary__animation-items.items2 .animation-state1 {
     z-index: 5;
     transform: translate(100%, 100%);
-    top: 38%;
+    top: 30%;
     left: 2%;
   }
   .primary1 .primary__container .primary__beauty-screen .primary__animation-items.items2 .animation-state2 {
@@ -1232,7 +1239,7 @@ span {
     left: 0%;
   }
   .primary1 .primary__container .primary__beauty-screen .primary__animation-items.items3 .animation-state2 {
-    z-index: 5;
+    z-index: 20;
     transform: translate(0%, 0%);
     top: 14%;
     left: 0%;
@@ -1267,7 +1274,7 @@ span {
     transform: translate(0%, 0%);
   }
   .primary2 .primary__container .primary__gym-screen .primary__animation-items.items1 .animation-state2 {
-    z-index: 5;
+    z-index: 20;
     top: 16%;
     right: 5%;
     transform: translate(0%, 0%);
@@ -1291,7 +1298,7 @@ span {
     left: 3%;
   }
   .primary2 .primary__container .primary__gym-screen .primary__animation-items.items2 .animation-state2 {
-    z-index: 5;
+    z-index: 20;
     transform: translate(0%, -100%);
     bottom: 24%;
     left: 3%;
@@ -1315,7 +1322,7 @@ span {
     left: 14%;
   }
   .primary2 .primary__container .primary__gym-screen .primary__animation-items.items3 .animation-state2 {
-    z-index: 5;
+    z-index: 20;
     transform: translate(0%, 0%);
     top: 27%;
     left: 14%;
@@ -1350,7 +1357,7 @@ span {
     transform: translate(0%, 100%);
   }
   .primary3 .primary__container .primary__movers-screen .primary__animation-items.items1 .animation-state2 {
-    z-index: 5;
+    z-index: 20;
     top: 0%;
     right: 0%;
     transform: translate(0%, 100%);
@@ -1374,7 +1381,7 @@ span {
     right: 0%;
   }
   .primary3 .primary__container .primary__movers-screen .primary__animation-items.items2 .animation-state2 {
-    z-index: 5;
+    z-index: 20;
     transform: translate(0%, 100%);
     top: 38%;
     right: 0%;
@@ -1398,7 +1405,7 @@ span {
     left: 0%;
   }
   .primary3 .primary__container .primary__movers-screen .primary__animation-items.items3 .animation-state2 {
-    z-index: 5;
+    z-index: 20;
     transform: translate(0%, 100%);
     top: 5%;
     left: 0%;
@@ -1603,5 +1610,17 @@ span {
     rotate: -180deg;
     width: 108vw;
     max-width: 421px;
+  }
+  .primary1 .primary__container .primary__beauty-screen .primary__animation-items.items1 .animation-state1 {
+    z-index: 5;
+    top: 0%;
+    left: calc(50% + 2vw);
+    transform: translate(100%, 100%);
+  }
+  .primary1 .primary__container .primary__beauty-screen .primary__animation-items.items2 .animation-state1 {
+    z-index: 5;
+    transform: translate(100%, 100%);
+    top: 10%;
+    left: 2%;
   }
 }/*# sourceMappingURL=main.css.map */
