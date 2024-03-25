@@ -676,8 +676,10 @@
 
         img {
           position: absolute;
-          height: 100%;
-          transform: translate(10px, -50px);
+          height: 110%;
+          left: 50%;
+          transform: translate(-50%, 0px);
+          bottom: 20px;
         }
       }
     }
@@ -966,21 +968,23 @@
 
       .menuIcon {
         display: flex;
+        transform: translate( calc(-50% - 10px),-50%);
       }
 
       .nav__menuMobile {
         position: fixed;
-        top: 0;
+        top: 20px;
         left: 0;
-        width: 100%;
-        // height: 100%;
-        transform: translateX(-100%);
+        width: calc(100vw - 40px);
+        height: calc(100vh - 40px);
+        transform: translateX(-101%);
         transition: transform 0.5s;
         z-index: 10;
-        padding: 12px 20px;
+        padding: 12px ;
 
         &.active {
-          transform: translateX(0);
+          left: 50%;
+          transform: translateX(-50%);
         }
 
         .header__nav-menu {
@@ -988,16 +992,23 @@
           display: flex;
           align-items: flex-start;
           flex-direction: column;
-          height: 100vh;
+          height: 100%;
           justify-content: center;
           gap: 10px;
+          padding-top: 121px;
+          width: 100%;
 
           li {
+
+            &:not(:last-child) { 
+                padding-left: 10px;
+            }
             &:last-child {
-              position: absolute;
-              left: 70%;
-              bottom: 0%;
-              transform: translate(-50%, -50%);
+              position: relative;
+              margin-top: auto;
+              width: 100%;
+
+              text-align: center;
             }
 
             &:last-child a {
@@ -1181,8 +1192,10 @@
           z-index: 5;
 
           img {
-            transform: translate(10px, -50px);
+            transform: translate(-50%, 0px);
             z-index: 5;
+            left: 50%;
+            bottom: 13px;
           }
         }
       }
@@ -1678,8 +1691,10 @@
           z-index: 5;
 
           img {
-            transform: translate(10px, -50px);
+            transform: translate(-50%, 0px);
             z-index: 5;
+            left: 50%;
+            bottom: 13px;
           }
         }
       }
@@ -1794,10 +1809,8 @@
             }
 
             &:last-child {
-              position: absolute;
-              left: 70%;
-              bottom: 0%;
-              transform: translate(-50%, -50%);
+       
+                
 
               a {
               }
@@ -1853,8 +1866,10 @@
           z-index: 5;
 
           img {
-            transform: translate(10px, -50px);
+            transform: translate(-50%, 0px);
             z-index: 5;
+            left: 50%;
+            bottom: 13px;
           }
         }
       }
