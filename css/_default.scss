@@ -1,0 +1,185 @@
+/* reset styles */
+* {
+	padding: 0;
+	margin: 0;
+	border: 0;
+}
+
+*,
+*:before,
+*:after {
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+:focus,
+:active {
+	outline: none;
+}
+
+a:focus,
+a:active {
+	outline: none;
+}
+
+nav,
+footer,
+header,
+aside {
+	display: block;
+}
+
+html,
+body {
+	height: 100%;
+	width: 100%;
+	font-size: 100%;
+	line-height: 1;
+	font-size: 14px;
+	-ms-text-size-adjust: 100%;
+	-moz-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+	scroll-behavior: smooth;
+}
+
+input,
+button,
+textarea {
+	font-family: inherit;
+}
+
+input::-ms-clear {
+	display: none;
+}
+
+button {
+	cursor: pointer;
+}
+
+button::-moz-focus-inner {
+	padding: 0;
+	border: 0;
+}
+
+a,
+a:visited {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+ul li,
+li {
+	list-style: none;
+}
+
+img {
+	vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-size: inherit;
+	font-weight: 400;
+}
+
+/* --------- end reset styles -------------- */
+
+/* default  */
+
+body {
+    background: rgb(244, 237, 220);
+
+    &.lock {
+		overflow: hidden;
+	}
+    scroll-behavior: smooth;
+
+	.wrapper {
+		margin: 0 auto;
+		position: relative;
+        width: 100%;
+		min-height: 100%;
+        max-width: 1440px;
+		display: flex;
+		flex-direction: column;
+		overflow: hidden;
+
+        // [class*="__container"] {
+		// 	position: relative;
+		// 	max-width: 1440px;
+		// 	padding: 0 40px;
+		// }
+	}
+}
+
+
+@font-face {
+	font-family: "Gotham Pro Bold";
+	src: url(../fonts/gotham-pro-bold/gothamProBold.ttf);
+	src: url(../fonts/gotham-pro-bold/gothamProBold.woff);
+	font-weight: normal;
+}
+@font-face {
+	font-family: "Gotham Pro Black";
+	src: url(../fonts/gotham-pro-black/gothamProBlack.ttf);
+	src: url(../fonts/gotham-pro-black/gothamProBlack.woff);
+	font-weight: normal;
+}
+@font-face {
+	font-family: "Gotham Pro Medium";
+	src: url(../fonts/gotham-pro-medium/gothamProMedium.ttf);
+	src: url(../fonts/gotham-pro-medium/gothamProMedium.woff);
+	font-weight: normal;
+}
+
+$maxWidth: 1440;
+
+@mixin adaptiv-font($pcSize, $mobSize) {
+  $addSize: $pcSize - $mobSize;
+  $maxWidth: $maxWidth - 320;
+  font-size: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth}));
+}
+
+h1, 
+h2 {
+	color: rgb(0, 41, 34);
+    font-family: "Gotham Pro Black";
+    font-size: 64px;
+    font-weight: 400;
+    line-height: 64px;
+    text-transform: uppercase;
+	@include adaptiv-font(64, 45);
+}
+h4{
+	color: rgb(0, 41, 34);
+    font-family:"Gotham Pro Black";
+    font-size: 34px;
+    font-weight: 400;
+    line-height: 64px;
+    text-transform: uppercase;
+	@include adaptiv-font(34, 22);
+}
+p{
+	color: rgb(23, 23, 23);
+    font-family: "Gotham Pro Medium";
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 14px;
+}
+a,
+span{
+	color: rgb(0, 41, 34);
+	font-family: "Gotham Pro Bold";
+	font-size: 14px;
+	font-weight: 700;
+	line-height: 13px;
+	text-transform: uppercase;
+}
