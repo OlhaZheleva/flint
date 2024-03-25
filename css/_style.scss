@@ -124,8 +124,10 @@
   padding-top: 170px;
   overflow: hidden;
   transition: all 1s ease;
-  display: none;
   z-index: 1;
+  background-color: rgb(244, 237, 220);
+  display: none;
+  
 
 
   .primary__beauty_mobile,
@@ -201,7 +203,7 @@
 }
 
 .primary1 {
-  background: url("../images/primary-background-img.jpg");
+  background: url("../images/primary-background-img.webp");
 
   .primary__container {
     .primary__beauty-screen {
@@ -352,7 +354,7 @@
 }
 
 .primary2 {
-  background: url("../images/primary-background-img2.jpg");
+  background: url("../images/primary-background-img2.webp");
 
   .primary__container {
     .primary__gym-screen {
@@ -505,7 +507,7 @@
 }
 
 .primary3 {
-  background: url("../images/primary-background-img3.jpg");
+  background: url("../images/primary-background-img3.webp");
 
   .primary__container {
     .primary__movers-screen {
@@ -780,11 +782,23 @@
 .video {
   .video__container {
     background: rgb(244, 237, 220);
+    aspect-ratio: 1.98/1;
+    
 
-    video {
+
+    iframe {
       border-radius: 20px;
       z-index: 2;
       position: relative;
+      width: 100%;
+      aspect-ratio: 1.98/1;
+      height: 100%;
+
+      video { 
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+      }
     }
   }
 }
@@ -937,6 +951,7 @@
   }
 
   .video {
+
     .video__container {
       video {
         width: 100vw;
@@ -1339,7 +1354,7 @@
   }
 
   .primary1 {
-    background-image: url("../images/primary-mob.png");
+    background-image: url("../images/primary-mob.webp");
 
     .primary__container {
       .primary__beauty-screen {
@@ -1450,7 +1465,7 @@
   }
 
   .primary2 {
-    background-image: url("../images/primary-mob2.png");
+    background-image: url("../images/primary-mob2.webp");
 
     .primary__container {
       .primary__gym-screen {
@@ -1559,7 +1574,7 @@
   }
 
   .primary3 {
-    background-image: url("../images/primary-mob3.png");
+    background-image: url("../images/primary-mob3.webp");
 
     .primary__container {
       .primary__movers-screen {
@@ -1775,6 +1790,14 @@
   }
 
   .video {
+
+    .video__container { 
+        iframe {
+            border-radius: 0px;
+          }
+    }
+
+
   }
 
   .footer {

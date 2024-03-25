@@ -8,12 +8,13 @@
     <link rel="stylesheet" href="css/main.css">
 
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-136603024-1"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MTXDM3KT6E"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
-        gtag('config', 'UA-136603024-1');
+
+        gtag('config', 'G-MTXDM3KT6E');
     </script>
 
 </head>
@@ -22,7 +23,7 @@
     <div class="wrapper">
         <header class="header">
             <div class="header__container menu">
-                <img class="header__logo" src="images/logo-tm.svg" alt="logo">
+                <img class="header__logo" src="images/logo-tm.svg" alt="logo" >
                 <div class="header__burgerIcon">
                     <span class="menuText">МЕНЮ</span>
                     <div class="menuIcon">
@@ -315,7 +316,10 @@
             <!-- ---------- VIDEO SECTION ---------- -->
             <section class="video" id="video">
                 <div class="video__container">
-                    <video src="" poster="images/primary-background-img.jpg" autoplay></video>
+                    <iframe id="lazy-loaded-video" width="560" height="315" src="https://www.youtube.com/embed/SZwBK4KCLkg?si=3V51TZ7yhMiL-Ny7?autoplay=1&mute=1"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                 </div>
             </section>
             <!---------- FOOTER ---------->
@@ -343,7 +347,7 @@
             </footer>
         </div>
     </div>
-    <script src="main.js"></script>
+    <script src="js/main.js"></script>
 </body>
 
 </html>

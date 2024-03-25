@@ -41,8 +41,11 @@ body {
 	-moz-text-size-adjust: 100%;
 	-webkit-text-size-adjust: 100%;
 	scroll-behavior: smooth;
-}
 
+}
+body { 
+	background: rgb(244, 237, 220);
+}
 input,
 button,
 textarea {
