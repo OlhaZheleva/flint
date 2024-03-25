@@ -186,6 +186,15 @@ document.addEventListener("click", () => {
   }, 3000);
 });
 
+var mediaQuery = window.matchMedia("(max-width: 499px)");
+document.addEventListener("touchstart", () => {
+  if (mediaQuery.matches) {
+    setTimeout(function () {
+      checkAllElementsDisplayBlock("show", "animation-state4");
+    }, 3000);
+   }
+});
+
 // відкладене завантаження відео
 
 document.addEventListener("DOMContentLoaded", function () {
