@@ -1,33 +1,105 @@
 // ---------- Animation
 
-document.addEventListener("DOMContentLoaded", function () {
-  let gifCollections = document.querySelectorAll(".primary__animation-items");
+// document.addEventListener("DOMContentLoaded", function () {
+//   let gifCollections = document.querySelectorAll(".primary__animation-items");
 
-  gifCollections.forEach(function (collection) {
-    let gif1 = collection.querySelector(".animation-state1");
-    let gif2 = collection.querySelector(".animation-state2");
-    let gif3 = collection.querySelector(".animation-state3");
-    let gif4 = collection.querySelector(".animation-state4");
+//   gifCollections.forEach(function (collection) {
+//     let gif1 = collection.querySelector(".animation-state1");
+//     let gif2 = collection.querySelector(".animation-state2");
+//     let gif3 = collection.querySelector(".animation-state3");
+//     let gif4 = collection.querySelector(".animation-state4");
 
-    gif2.style.display = "none";
-    gif3.style.display = "none";
-    gif4.style.display = "none";
+//     gif2.style.display = "none";
+//     gif3.style.display = "none";
+//     gif4.style.display = "none";
 
-    gif1.addEventListener("mouseenter", function () {
-      gif1.style.display = "none";
-      gif2.style.display = "block";
-    });
+//     gif1.addEventListener("mouseenter", function () {
+//       gif1.style.display = "none";
+//       gif2.style.display = "block";
+//     });
 
-    gif2.addEventListener("click", function () {
-      gif2.style.display = "none";
-      gif3.style.display = "block";
+//     gif2.addEventListener("click", function () {
+//       gif2.style.display = "none";
+//       gif3.style.display = "block";
 
-      setTimeout(function () {
+//       setTimeout(function () {
+//         gif3.style.display = "none";
+//         gif4.style.display = "block";
+//       }, 2000);
+//     });
+//   });
+// });
+
+
+// ---------- Animation
+
+document.addEventListener("DOMContentLoaded", function() {
+
+    let gifCollections = document.querySelectorAll(".primary__animation-items");
+
+    gifCollections.forEach(function(collection) {
+        let gif1 = collection.querySelector(".animation-state1");
+        let gif2 = collection.querySelector(".animation-state2");
+        let gif3 = collection.querySelector(".animation-state3");
+        let gif4 = collection.querySelector(".animation-state4");
+
+        gif2.style.display = "none";
         gif3.style.display = "none";
-        gif4.style.display = "block";
-      }, 2000);
+        gif4.style.display = "none";
+
+        gif1.addEventListener("mouseenter", function() {
+            gif1.style.display = "none";
+            gif2.style.display = "block";
+        });
+
+        gif2.addEventListener("click", function() {
+            gif2.style.display = "none";
+            gif3.style.display = "block";
+            
+            setTimeout(function() {
+                gif3.style.display = "none";
+                gif4.style.display = "block";
+            }, 2000);
+        });
     });
-  });
+});
+
+document.addEventListener("DOMContentLoaded", function() {
+    let gifCollections = document.querySelectorAll(".primary__animation-items");
+
+    gifCollections.forEach(function(collection) {
+        let gifs = collection.querySelectorAll(".animation-state_mob");
+        let gif1 = collection.querySelector(".animation-state1");
+        let gif2 = collection.querySelector(".animation-state2");
+        let gif3 = collection.querySelector(".animation-state3");
+        let gif4 = collection.querySelector(".animation-state4");
+
+        gif2.style.display = "none";
+        gif3.style.display = "none";
+        gif4.style.display = "none";
+
+        gifs.forEach(function(gif, index) {
+            if (index !== 0) {
+                gif.style.display = "none";
+            }
+
+            gif.addEventListener("touchstart", function(event) {
+                event.preventDefault(); 
+                gif.style.display = "none"; 
+
+                let nextIndex = (index + 1) % gifs.length;
+                gifs[nextIndex].style.display = "block";
+
+                
+                if (gif === gif2) {
+                    setTimeout(function() {
+                        gif3.style.display = "none";
+                        gif4.style.display = "block";
+                    }, 2000);
+                }
+            });
+        });
+    });
 });
 
 // ---------------------mobile menu
