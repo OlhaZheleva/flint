@@ -7,7 +7,7 @@ function randonScreen() {
   var randomScreen = screens[random];
 
   screens.forEach((screen) => {
-    if (screen.classList.contains("show")) { 
+    if (screen.classList.contains("show")) {
       screen.classList.remove("show");
     }
   });
@@ -18,79 +18,80 @@ window.addEventListener("load", () => {
   randonScreen();
 });
 
-
-
-
 // // ---------- Animation
 
 document.addEventListener("DOMContentLoaded", function () {
   let gifCollections = document.querySelectorAll(".primary__animation-items");
+  var mediaQuery = window.matchMedia("(min-width: 501px)");
+  if (mediaQuery.matches) {
+    gifCollections.forEach(function (collection) {
+      let gif1 = collection.querySelector(".animation-state1");
+      let gif2 = collection.querySelector(".animation-state2");
+      let gif3 = collection.querySelector(".animation-state3");
+      let gif4 = collection.querySelector(".animation-state4");
 
-  gifCollections.forEach(function (collection) {
-    let gif1 = collection.querySelector(".animation-state1");
-    let gif2 = collection.querySelector(".animation-state2");
-    let gif3 = collection.querySelector(".animation-state3");
-    let gif4 = collection.querySelector(".animation-state4");
-
-    gif2.style.display = "none";
-    gif3.style.display = "none";
-    gif4.style.display = "none";
-
-    gif1.addEventListener("mouseenter", function () {
-      gif1.style.display = "none";
-      gif2.style.display = "block";
-    });
-
-    gif2.addEventListener("click", function () {
       gif2.style.display = "none";
-      gif3.style.display = "block";
+      gif3.style.display = "none";
+      gif4.style.display = "none";
 
-      setTimeout(function () {
-        gif3.style.display = "none";
-        gif4.style.display = "block";
-      }, 2000);
-    });
-  });
- });
+      gif1.addEventListener("mouseenter", function () {
+        gif1.style.display = "none";
+        gif2.style.display = "block";
+      });
 
-document.addEventListener("DOMContentLoaded", function () {
-  let gifCollections = document.querySelectorAll(".primary__animation-items");
+      gif2.addEventListener("click", function () {
+        gif2.style.display = "none";
+        gif3.style.display = "block";
 
-  gifCollections.forEach(function (collection) {
-    let gifs = collection.querySelectorAll(".animation-state_mob");
-    let gif1 = collection.querySelector(".animation-state1");
-    let gif2 = collection.querySelector(".animation-state2");
-    let gif3 = collection.querySelector(".animation-state3");
-    let gif4 = collection.querySelector(".animation-state4");
-
-    gif2.style.display = "none";
-    gif3.style.display = "none";
-    gif4.style.display = "none";
-
-    gifs.forEach(function (gif, index) {
-      if (index !== 0) {
-        gif.style.display = "none";
-      }
-
-      gif.addEventListener("touchstart", function (event) {
-        event.preventDefault();
-        gif.style.display = "none";
-
-        let nextIndex = (index + 1) % gifs.length;
-        gifs[nextIndex].style.display = "block";
-
-        if (gif === gif3) {
-          setTimeout(function () {
-            gif3.style.display = "none";
-            gif4.style.display = "block";
-          }, 2000);
-        }
+        setTimeout(function () {
+          gif3.style.display = "none";
+          gif4.style.display = "block";
+        }, 2000);
       });
     });
-  });
+  }
+});
+// механіка колекції пачок на мобільній версії
+document.addEventListener("DOMContentLoaded", function () {
+  let gifCollections = document.querySelectorAll(".primary__animation-items");
+  var mediaQuery = window.matchMedia("(max-width: 499px)");
+  if (mediaQuery.matches) {
+    gifCollections.forEach(function (collection) {
+      let gifs = collection.querySelectorAll(".animation-state_mob");
+      let gif1 = collection.querySelector(".animation-state1");
+      let gif2 = collection.querySelector(".animation-state2");
+      let gif3 = collection.querySelector(".animation-state3");
+      let gif4 = collection.querySelector(".animation-state4");
+
+      gif2.style.display = "none";
+      gif3.style.display = "none";
+      gif4.style.display = "none";
+
+      gifs.forEach(function (gif, index) {
+        if (index !== 0) {
+          gif.style.display = "none";
+        }
+
+        gif.addEventListener("touchstart", function (event) {
+          event.preventDefault();
+          gif.style.display = "none";
+
+          let nextIndex = (index + 1) % gifs.length;
+          gifs[nextIndex].style.display = "block";
+
+          if (gif === gif3) {
+            setTimeout(function () {
+              gif3.style.display = "none";
+              gif4.style.display = "block";
+            }, 2000);
+          }
+        });
+      });
+    });
+  }
 });
 
-// mobile menu 
+// mobile menu
 
 let menuBtn = document.querySelector(".header__burgerIcon");
 let menu = document.querySelector(".nav__menuMobile");
@@ -113,9 +114,6 @@ function toggleMenu() {
 window.addEventListener("scroll", () => {
   document.body.classList.remove("lock");
 });
-
-
-
 
 // ---------- scene update end
 
@@ -184,17 +182,15 @@ function graduallyShowBlock(block) {
 document.addEventListener("click", () => {
   setTimeout(function () {
     checkAllElementsDisplayBlock("show", "animation-state4");
-  }, 6000);
+  }, 3000);
 });
 
+// відкладене завантаження відео
 
-
-// відкладене завантаження відео 
-
-// document.addEventListener("DOMContentLoaded", function() {
-//   var lazyLoadedVideo = document.getElementById("lazy-loaded-video");
-//   if (lazyLoadedVideo) {
-//       var src = lazyLoadedVideo.getAttribute("data-src");
-//       lazyLoadedVideo.setAttribute("https://www.youtube.com/embed/SZwBK4KCLkg?si=3V51TZ7yhMiL-Ny7?autoplay=1&mute=1", src);
-//   }
-// });
+document.addEventListener("DOMContentLoaded", function () {
+  var lazyLoadedVideo = document.getElementById("lazy-loaded-video");
+  if (lazyLoadedVideo) {
+    var src = lazyLoadedVideo.getAttribute("data-src");
+    lazyLoadedVideo.setAttribute("src", src);
+  }
+});
