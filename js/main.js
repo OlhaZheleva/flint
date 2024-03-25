@@ -19,6 +19,7 @@ window.addEventListener("load", () => {
 });
 
 // // ---------- Animation
+// механіка колекції пачок на descktop версії
 
 document.addEventListener("DOMContentLoaded", function () {
   let gifCollections = document.querySelectorAll(".primary__animation-items");
