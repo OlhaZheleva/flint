@@ -752,6 +752,9 @@ span {
   border-radius: 20px;
   background: rgb(251, 246, 238);
   padding: 30px 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 .product .product__container .product__items-container .product__item .product__item-img {
   width: 28vw;
@@ -789,11 +792,10 @@ span {
   z-index: 5;
 }
 .footer .footer__container .footer__title::before {
-  content: url("../images/second-click.svg");
+  content: url(../images/second-click.svg);
   position: absolute;
-  left: 0;
-  top: 25%;
-  transform: translate(50%, 50%);
+  left: -50px;
+  top: -30%;
 }
 .footer .footer__container .footer__icons {
   display: flex;
@@ -1482,9 +1484,9 @@ span {
     line-height: 48px;
   }
   .footer .footer__container .footer__title::before {
-    left: 25%;
-    top: 41%;
-    transform: translate(50%, -50%);
+    left: 100px;
+    top: -50px;
+    transform: none;
     rotate: 90deg;
   }
   .footer .footer__container .footer__background {

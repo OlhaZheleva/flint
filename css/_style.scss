@@ -742,6 +742,10 @@
         background: rgb(251, 246, 238);
         padding: 30px 50px;
 
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
         .product__item-img {
           width: 28vw;
           max-width: 406px;
@@ -781,7 +785,6 @@
   .footer__container {
     position: relative;
     padding: 233px 105px 130px;
-
     background: rgb(244, 237, 220);
 
     .footer__title {
@@ -791,11 +794,10 @@
       z-index: 5;
 
       &::before {
-        content: url("../images/second-click.svg");
+        content: url(../images/second-click.svg);
         position: absolute;
-        left: 0;
-        top: 25%;
-        transform: translate(50%, 50%);
+        left: -50px;
+        top: -30%;
       }
     }
 
@@ -1352,10 +1354,10 @@
             }
 
             .animation-state4 {
-                z-index: 9;
-                transform: translate(-50%, 0);
-                left: calc(50% - 78px);
-                bottom: 3px;
+              z-index: 9;
+              transform: translate(-50%, 0);
+              left: calc(50% - 78px);
+              bottom: 3px;
             }
           }
 
@@ -1381,10 +1383,10 @@
             }
 
             .animation-state4 {
-                z-index: 9;
-                bottom: 5px;
-                left: calc(50% + 4px);
-                transform: translate(-50%, 0%);
+              z-index: 9;
+              bottom: 5px;
+              left: calc(50% + 4px);
+              transform: translate(-50%, 0%);
             }
           }
 
@@ -1411,11 +1413,11 @@
             }
 
             .animation-state4 {
-                z-index: 9;
-                bottom: 3px;
-                left: inherit;
-                right: calc(50% - 63px);
-                transform: translate(60%, 0px);
+              z-index: 9;
+              bottom: 3px;
+              left: inherit;
+              right: calc(50% - 63px);
+              transform: translate(60%, 0px);
             }
           }
         }
@@ -1520,11 +1522,11 @@
             }
 
             .animation-state4 {
-                z-index: 9;
-                bottom: 3px;
-                left: inherit;
-                right: calc(50% - 63px);
-                transform: translate(60%, 0px);
+              z-index: 9;
+              bottom: 3px;
+              left: inherit;
+              right: calc(50% - 63px);
+              transform: translate(60%, 0px);
             }
           }
         }
@@ -1572,10 +1574,10 @@
             }
 
             .animation-state4 {
-                z-index: 9;
-                transform: translate(-50%, 0);
-                left: calc(50% - 78px);
-                bottom: 3px;
+              z-index: 9;
+              transform: translate(-50%, 0);
+              left: calc(50% - 78px);
+              bottom: 3px;
             }
           }
 
@@ -1602,10 +1604,10 @@
             }
 
             .animation-state4 {
-                z-index: 9;
-                bottom: 5px;
-                left: calc(50% + 4px);
-                transform: translate(-50%, 0%);
+              z-index: 9;
+              bottom: 5px;
+              left: calc(50% + 4px);
+              transform: translate(-50%, 0%);
             }
           }
 
@@ -1632,11 +1634,11 @@
             }
 
             .animation-state4 {
-                z-index: 9;
-                bottom: 3px;
-                left: inherit;
-                right: calc(50% - 63px);
-                transform: translate(60%, 0px);
+              z-index: 9;
+              bottom: 3px;
+              left: inherit;
+              right: calc(50% - 63px);
+              transform: translate(60%, 0px);
             }
           }
         }
@@ -1757,9 +1759,9 @@
         line-height: 48px;
 
         &::before {
-          left: 25%;
-          top: 41%;
-          transform: translate(50%, -50%);
+          left: 100px;
+          top: -50px;
+          transform: none;
           rotate: 90deg;
         }
       }
