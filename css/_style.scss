@@ -123,17 +123,14 @@
   position: relative;
   padding-top: 170px;
   overflow: hidden;
-  transition: all 1s ease; 
+  transition: all 1s ease;
   display: none;
-  
-
 
   .primary__beauty_mobile,
   .primary__gym_mobile,
   .primary__movers_mobile {
     display: none;
   }
-
 
   &.show {
     display: block;
@@ -1355,10 +1352,10 @@
             }
 
             .animation-state4 {
-              z-index: 9;
-              transform: translate(50%, 0%);
-              bottom: 5px;
-              left: 17px;
+                z-index: 9;
+                transform: translate(-50%, 0);
+                left: calc(50% - 78px);
+                bottom: 3px;
             }
           }
 
@@ -1384,10 +1381,10 @@
             }
 
             .animation-state4 {
-              z-index: 9;
-              bottom: 9%;
-              left: 46px;
-              transform: translate(0%, 50%);
+                z-index: 9;
+                bottom: 5px;
+                left: calc(50% + 4px);
+                transform: translate(-50%, 0%);
             }
           }
 
@@ -1414,10 +1411,11 @@
             }
 
             .animation-state4 {
-              z-index: 9;
-              bottom: 9%;
-              left: 22%;
-              transform: translate(50%, 50%);
+                z-index: 9;
+                bottom: 3px;
+                left: inherit;
+                right: calc(50% - 63px);
+                transform: translate(60%, 0px);
             }
           }
         }
@@ -1436,9 +1434,6 @@
           left: 0;
           transform: none;
           width: 100%;
-        }
-
-        .primary__gym {
         }
 
         .primary__animation-items {
@@ -1466,9 +1461,9 @@
 
             .animation-state4 {
               z-index: 9;
-              transform: translate(50%, 0%);
-              bottom: 5px;
-              left: 17px;
+              transform: translate(-50%, 0);
+              left: calc(50% - 78px);
+              bottom: 3px;
             }
           }
 
@@ -1497,8 +1492,8 @@
             .animation-state4 {
               z-index: 9;
               bottom: 5px;
-              left: 46px;
-              transform: translate(0%, 0%);
+              left: calc(50% + 5px);
+              transform: translate(-50%, 0%);
             }
           }
 
@@ -1525,10 +1520,11 @@
             }
 
             .animation-state4 {
-              z-index: 9;
-              bottom: 9%;
-              left: 22%;
-              transform: translate(50%, 50%);
+                z-index: 9;
+                bottom: 3px;
+                left: inherit;
+                right: calc(50% - 63px);
+                transform: translate(60%, 0px);
             }
           }
         }
@@ -1576,10 +1572,10 @@
             }
 
             .animation-state4 {
-              z-index: 9;
-              transform: translate(50%, 0%);
-              bottom: 5px;
-              left: 17px;
+                z-index: 9;
+                transform: translate(-50%, 0);
+                left: calc(50% - 78px);
+                bottom: 3px;
             }
           }
 
@@ -1606,10 +1602,10 @@
             }
 
             .animation-state4 {
-              z-index: 9;
-              bottom: 9%;
-              left: 46px;
-              transform: translate(0%, 50%);
+                z-index: 9;
+                bottom: 5px;
+                left: calc(50% + 4px);
+                transform: translate(-50%, 0%);
             }
           }
 
@@ -1636,10 +1632,11 @@
             }
 
             .animation-state4 {
-              z-index: 9;
-              bottom: 9%;
-              left: 22%;
-              transform: translate(50%, 50%);
+                z-index: 9;
+                bottom: 3px;
+                left: inherit;
+                right: calc(50% - 63px);
+                transform: translate(60%, 0px);
             }
           }
         }

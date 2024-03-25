@@ -150,69 +150,39 @@ randonScreenBtn.addEventListener("click", randonScreen());
 let allState4 = document.querySelectorAll(".animation-state4");
 let primary = document.querySelector(".primary");
 
+
 // function checkAllElementsDisplayBlock(sectionClass, elementClass) {
-//   var sections = document.getElementsByClassName(sectionClass);
-//   let pageContent = document.querySelector(".page-content");
+//     var sections = document.getElementsByClassName(sectionClass);
+//     let pageContent = document.querySelector(".page-content");
 
-//   for (var i = 0; i < sections.length; i++) {
-//     var section = sections[i];
-//     var allBlocks = true;
-//     var elements = section.getElementsByClassName(elementClass);
-//     var blockCount = 0;
+//     for (var i = 0; i < sections.length; i++) {
+//         var section = sections[i];
+//         var allBlocks = false; // Значення allBlocks повинно бути початково встановлено як false
+//         var elements = section.getElementsByClassName(elementClass);
+//         var blockCount = 0;
 
-//     for (var j = 0; j < elements.length; j++) {
-//       var computedStyle = window.getComputedStyle(elements[j]);
-//       if (computedStyle.getPropertyValue("display") !== "block") {
-//         blockCount++;
-//         if (blockCount >= 3) {
-//           allBlocks = false;
-//           break;
+//         for (var j = 0; j < elements.length; j++) {
+//             var computedStyle = window.getComputedStyle(elements[j]);
+//             if (computedStyle.getPropertyValue("display") === "block") { // Перевірка, чи елемент має стиль block
+//                 blockCount++;
+//                 if (blockCount >= 3) {
+//                     allBlocks = true;
+//                     break;
+//                 }
+//             }
 //         }
-//       }
-//     }
 
-//     if (allBlocks) {
-//       section.classList.add("fill-back");
-//       setTimeout(function () {
-//         section.classList.add("hidden");
-//         setTimeout(graduallyShowBlock(pageContent), 500);
-//       }, 500);
+//         if (allBlocks) {
+//             section.classList.add("fill-back");
+//             setTimeout(function () {
+//                 section.classList.add("hidden");
+//                 setTimeout(function() {
+//                     graduallyShowBlock(pageContent);
+//                 }, 500); // Функція graduallyShowBlock повинна бути передана у setTimeout без виклику
+//             }, 500);
+//         }
 //     }
-//   }
 // }
-
-function checkAllElementsDisplayBlock(sectionClass, elementClass) {
-    var sections = document.getElementsByClassName(sectionClass);
-    let pageContent = document.querySelector(".page-content");
-
-    for (var i = 0; i < sections.length; i++) {
-        var section = sections[i];
-        var allBlocks = false; // Значення allBlocks повинно бути початково встановлено як false
-        var elements = section.getElementsByClassName(elementClass);
-        var blockCount = 0;
-
-        for (var j = 0; j < elements.length; j++) {
-            var computedStyle = window.getComputedStyle(elements[j]);
-            if (computedStyle.getPropertyValue("display") === "block") { // Перевірка, чи елемент має стиль block
-                blockCount++;
-                if (blockCount >= 3) {
-                    allBlocks = true;
-                    break;
-                }
-            }
-        }
-
-        if (allBlocks) {
-            section.classList.add("fill-back");
-            setTimeout(function () {
-                section.classList.add("hidden");
-                setTimeout(function() {
-                    graduallyShowBlock(pageContent);
-                }, 500); // Функція graduallyShowBlock повинна бути передана у setTimeout без виклику
-            }, 500);
-        }
-    }
-}
 
 function graduallyShowBlock(block) {
   block.style.display = "block"; // Показуємо блок

@@ -1179,9 +1179,9 @@ span {
   }
   .primary1 .primary__container .primary__beauty-screen .primary__animation-items.items1 .animation-state4 {
     z-index: 9;
-    transform: translate(50%, 0%);
-    bottom: 5px;
-    left: 17px;
+    transform: translate(-50%, 0);
+    left: calc(50% - 78px);
+    bottom: 3px;
   }
   .primary1 .primary__container .primary__beauty-screen .primary__animation-items.items2 .animation-state1 {
     z-index: 5;
@@ -1202,9 +1202,9 @@ span {
   }
   .primary1 .primary__container .primary__beauty-screen .primary__animation-items.items2 .animation-state4 {
     z-index: 9;
-    bottom: 9%;
-    left: 46px;
-    transform: translate(0%, 50%);
+    bottom: 5px;
+    left: calc(50% + 4px);
+    transform: translate(-50%, 0%);
   }
   .primary1 .primary__container .primary__beauty-screen .primary__animation-items.items3 .animation-state1 {
     z-index: 5;
@@ -1226,9 +1226,10 @@ span {
   }
   .primary1 .primary__container .primary__beauty-screen .primary__animation-items.items3 .animation-state4 {
     z-index: 9;
-    bottom: 9%;
-    left: 22%;
-    transform: translate(50%, 50%);
+    bottom: 3px;
+    left: inherit;
+    right: calc(50% - 63px);
+    transform: translate(60%, 0px);
   }
   .primary2 {
     background-image: url("../images/primary-mob2.png");
@@ -1260,9 +1261,9 @@ span {
   }
   .primary2 .primary__container .primary__gym-screen .primary__animation-items.items1 .animation-state4 {
     z-index: 9;
-    transform: translate(50%, 0%);
-    bottom: 5px;
-    left: 17px;
+    transform: translate(-50%, 0);
+    left: calc(50% - 78px);
+    bottom: 3px;
   }
   .primary2 .primary__container .primary__gym-screen .primary__animation-items.items2 .animation-state1 {
     z-index: 5;
@@ -1285,8 +1286,8 @@ span {
   .primary2 .primary__container .primary__gym-screen .primary__animation-items.items2 .animation-state4 {
     z-index: 9;
     bottom: 5px;
-    left: 46px;
-    transform: translate(0%, 0%);
+    left: calc(50% + 5px);
+    transform: translate(-50%, 0%);
   }
   .primary2 .primary__container .primary__gym-screen .primary__animation-items.items3 .animation-state1 {
     z-index: 5;
@@ -1308,9 +1309,10 @@ span {
   }
   .primary2 .primary__container .primary__gym-screen .primary__animation-items.items3 .animation-state4 {
     z-index: 9;
-    bottom: 9%;
-    left: 22%;
-    transform: translate(50%, 50%);
+    bottom: 3px;
+    left: inherit;
+    right: calc(50% - 63px);
+    transform: translate(60%, 0px);
   }
   .primary3 {
     background-image: url("../images/primary-mob3.png");
@@ -1342,9 +1344,9 @@ span {
   }
   .primary3 .primary__container .primary__movers-screen .primary__animation-items.items1 .animation-state4 {
     z-index: 9;
-    transform: translate(50%, 0%);
-    bottom: 5px;
-    left: 17px;
+    transform: translate(-50%, 0);
+    left: calc(50% - 78px);
+    bottom: 3px;
   }
   .primary3 .primary__container .primary__movers-screen .primary__animation-items.items2 .animation-state1 {
     z-index: 5;
@@ -1366,9 +1368,9 @@ span {
   }
   .primary3 .primary__container .primary__movers-screen .primary__animation-items.items2 .animation-state4 {
     z-index: 9;
-    bottom: 9%;
-    left: 46px;
-    transform: translate(0%, 50%);
+    bottom: 5px;
+    left: calc(50% + 4px);
+    transform: translate(-50%, 0%);
   }
   .primary3 .primary__container .primary__movers-screen .primary__animation-items.items3 .animation-state1 {
     z-index: 5;
@@ -1390,9 +1392,10 @@ span {
   }
   .primary3 .primary__container .primary__movers-screen .primary__animation-items.items3 .animation-state4 {
     z-index: 9;
-    bottom: 9%;
-    left: 22%;
-    transform: translate(50%, 50%);
+    bottom: 3px;
+    left: inherit;
+    right: calc(50% - 63px);
+    transform: translate(60%, 0px);
   }
   .second .second__container {
     padding: 350px 20px 40px;
