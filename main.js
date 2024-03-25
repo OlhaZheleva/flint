@@ -143,46 +143,16 @@ window.addEventListener("load", () => {
   randonScreen();
 });
 
-randonScreenBtn.addEventListener("click", randonScreen());
+randonScreenBtn.addEventListener("click", function (event) {
+    event.preventDefault();
+    randonScreen();
+});
 
 // ---------- scene update end
 
 let allState4 = document.querySelectorAll(".animation-state4");
 let primary = document.querySelector(".primary");
 
-
-// function checkAllElementsDisplayBlock(sectionClass, elementClass) {
-//     var sections = document.getElementsByClassName(sectionClass);
-//     let pageContent = document.querySelector(".page-content");
-
-//     for (var i = 0; i < sections.length; i++) {
-//         var section = sections[i];
-//         var allBlocks = false; // Значення allBlocks повинно бути початково встановлено як false
-//         var elements = section.getElementsByClassName(elementClass);
-//         var blockCount = 0;
-
-//         for (var j = 0; j < elements.length; j++) {
-//             var computedStyle = window.getComputedStyle(elements[j]);
-//             if (computedStyle.getPropertyValue("display") === "block") { // Перевірка, чи елемент має стиль block
-//                 blockCount++;
-//                 if (blockCount >= 3) {
-//                     allBlocks = true;
-//                     break;
-//                 }
-//             }
-//         }
-
-//         if (allBlocks) {
-//             section.classList.add("fill-back");
-//             setTimeout(function () {
-//                 section.classList.add("hidden");
-//                 setTimeout(function() {
-//                     graduallyShowBlock(pageContent);
-//                 }, 500); // Функція graduallyShowBlock повинна бути передана у setTimeout без виклику
-//             }, 500);
-//         }
-//     }
-// }
 
 function checkAllElementsDisplayBlock(sectionClass, elementClass) {
     var sections = document.getElementsByClassName(sectionClass);
@@ -214,6 +184,7 @@ function checkAllElementsDisplayBlock(sectionClass, elementClass) {
         function checkBlocks() {
             if (allBlocks) {
                 section.classList.add("fill-back");
+                document.body.style.overflow = 'inherit';
                 setTimeout(function () {
                     section.classList.add("hidden");
                     setTimeout(function() {

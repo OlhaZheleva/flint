@@ -937,7 +937,11 @@
     }
   }
 }
-
+@media (min-width: 780px) { 
+    body { 
+        overflow: hidden;
+    }
+}
 @media (max-width: 768px) {
   .header {
     .header__container {
@@ -976,7 +980,7 @@
         top: 20px;
         left: 0;
         width: calc(100vw - 40px);
-        height: calc(100vh - 80px);
+        height: calc(100vh - 90px);
         transform: translateX(-101%);
         transition: transform 0.5s;
         z-index: 10;
