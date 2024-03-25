@@ -17,7 +17,10 @@ function randonScreen() {
 window.addEventListener("load", () => {
   randonScreen();
 });
-
+randonScreenBtn.addEventListener('click', function(event) { 
+  event.preventDefault();
+  location.reload();
+})
 // // ---------- Animation
 // механіка колекції пачок на descktop версії
 
