@@ -3,7 +3,7 @@ let screens = document.querySelectorAll(".primary");
 let randonScreenBtn = document.querySelector(".randonScreen");
 
 function randonScreen() {
-  var random = Math.floor(Math.random() * screens.length) + 0;
+  var random = Math.floor(Math.random() * screens.length);
   var randomScreen = screens[random];
 
   screens.forEach((screen) => {
@@ -22,9 +22,11 @@ window.addEventListener("load", () => {
 // механіка колекції пачок на descktop версії
 
 document.addEventListener("DOMContentLoaded", function () {
+  var mediaQueryPC = window.matchMedia("(min-width: 501px)");
+  var mediaQueryMob = window.matchMedia("(max-width: 499px)");
   let gifCollections = document.querySelectorAll(".primary__animation-items");
-  var mediaQuery = window.matchMedia("(min-width: 501px)");
-  if (mediaQuery.matches) {
+
+  if (mediaQueryPC.matches) {
     gifCollections.forEach(function (collection) {
       let gif1 = collection.querySelector(".animation-state1");
       let gif2 = collection.querySelector(".animation-state2");
@@ -51,48 +53,44 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     });
   }
-});
-// механіка колекції пачок на мобільній версії
-document.addEventListener("DOMContentLoaded", function () {
-  let gifCollections = document.querySelectorAll(".primary__animation-items");
-  var mediaQuery = window.matchMedia("(max-width: 499px)");
-  if (mediaQuery.matches) {
+  if (mediaQueryMob.matches) {
     gifCollections.forEach(function (collection) {
       let gifs = collection.querySelectorAll(".animation-state_mob");
       let gif1 = collection.querySelector(".animation-state1");
       let gif2 = collection.querySelector(".animation-state2");
       let gif3 = collection.querySelector(".animation-state3");
       let gif4 = collection.querySelector(".animation-state4");
-
-      gif2.style.display = "none";
-      gif3.style.display = "none";
-      gif4.style.display = "none";
-
+      let currentStateIndex = 0;
+    
       gifs.forEach(function (gif, index) {
-        if (index !== 0) {
+        if (index !== currentStateIndex) {
           gif.style.display = "none";
         }
-
+    
         gif.addEventListener("touchstart", function (event) {
           event.preventDefault();
-          gif.style.display = "none";
-
-          let nextIndex = (index + 1) % gifs.length;
-          gifs[nextIndex].style.display = "block";
-
-          if (gif === gif3) {
+          gifs[currentStateIndex].style.display = "none"; // Приховуємо поточний стан
+    
+          // Змінюємо індекс поточного стану на наступний
+          currentStateIndex = (currentStateIndex + 1) % gifs.length;
+    
+          // Показуємо наступний стан
+          gifs[currentStateIndex].style.display = "block";
+    
+          // Перевіряємо, чи досягнуто кінця анімації, якщо так, то показуємо наступний стан gif4
+          if (currentStateIndex === 2) {
             setTimeout(function () {
-              gif3.style.display = "none";
+              gifs[2].style.display = "none";
               gif4.style.display = "block";
             }, 2000);
           }
         });
       });
     });
+    
   }
 });
 
-// mobile menu
 
 let menuBtn = document.querySelector(".header__burgerIcon");
 let menu = document.querySelector(".nav__menuMobile");
@@ -191,8 +189,8 @@ document.addEventListener("touchstart", () => {
   if (mediaQuery.matches) {
     setTimeout(function () {
       checkAllElementsDisplayBlock("show", "animation-state4");
-    }, 3000);
-   }
+    }, 4000);
+  }
 });
 
 // відкладене завантаження відео

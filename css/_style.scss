@@ -116,18 +116,16 @@
 // ---------- PRIMARY SECTION -----------
 
 .primary {
-  background-repeat: no-repeat;
-  background-size: cover;
   aspect-ratio: 1.98/1;
   width: 100%;
   position: relative;
   overflow: hidden;
   transition: all 1s ease;
   z-index: 1;
-  background-color: rgb(244, 237, 220);
   display: none;
-  
-
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: top left;
 
   .primary__beauty_mobile,
   .primary__gym_mobile,
@@ -146,7 +144,7 @@
 
   &::before {
     content: "";
-    z-index: 10;
+    z-index: 11;
     position: absolute;
     left: 0;
     top: 0;
@@ -201,61 +199,61 @@
     }
 
     .primary__central_phrase {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 24vw;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -80%);
+      width: 24vw;
+      height: auto;
+      max-width: 352px;
+      max-height: 281px;
+      z-index: 10;
+      max-width: 400px;
+
+      .primary__pic {
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    .primary__boxes {
+      display: flex;
+      gap: 5px;
+      align-self: flex-end;
+      position: relative;
+      z-index: 8;
+
+      .box-item {
+        border-radius: 10px;
+        background: rgb(255, 255, 255);
+        padding: 10px 14px;
+        width: 8vw;
+        max-width: 79px;
         height: auto;
-        max-width: 352px;
-        max-height: 281px;
-        z-index: 20;
-  
-        .primary__pic {
+        max-height: 78px;
+
+        img {
           width: 100%;
           height: 100%;
         }
       }
-  
-      .primary__boxes {
-        display: flex;
-        gap: 5px;
-        align-self: flex-end;
-        position: relative;
-        z-index: 8;
-  
-        .box-item {
-          border-radius: 10px;
-          background: rgb(255, 255, 255);
-          padding: 10px 14px;
-          width: 8vw;
-          max-width: 79px;
-          height: auto;
-          max-height: 78px;
-  
-          img {
-            width: 100%;
-            height: 100%;
-          }
-        }
-      }
+    }
   }
 }
 
 .primary1 {
-  background: url("../images/primary-background-img.webp");
-
+  background-image: url("../images/primary-background-img.webp");
 
   .primary__container {
     .primary__beauty-screen {
-        height: 100%;
-        width: 100%;
-        position: absolute;
-        top: 0;
-        left: 0;
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
 
       .primary__beauty {
         position: absolute;
@@ -271,27 +269,23 @@
         &.items1 {
           .animation-state1 {
             z-index: 5;
-            bottom: 66%;
-            left: 2%;
+            bottom: 50%;
+            left: 1%;
           }
 
           .animation-state2 {
             z-index: 5;
-            bottom: 12%;
-            left: 14%;
-            transform: translate(-100%, -100%);
+            bottom: 50%;
+            left: 1%;
           }
 
           .animation-state3 {
-            z-index: 6;
-            top: 18%;
-            left: 35%;
-            transform: translate(-50%, -50%);
+            z-index: 20;
+            left: 1%;
           }
 
           .animation-state4 {
             z-index: 9;
-            transform: translate(0%, 0%);
             bottom: 10px;
             left: 26px;
           }
@@ -300,79 +294,70 @@
         &.items2 {
           .animation-state1 {
             z-index: 5;
-            transform: translate(100%, 50%);
-            bottom: 8%;
-            left: 34%;
+            bottom: -3%;
+            left: 45%;
           }
 
           .animation-state2 {
             z-index: 5;
-            transform: translate(100%, 50%);
-            bottom: 8%;
-            left: 34%;
+            bottom: 0%;
+            left: 45%;
           }
 
           .animation-state3 {
-            z-index: 7;
-            transform: translate(21%, 39%);
-            bottom: 52%;
-            left: 0%;
+            z-index: 15;
+            bottom: 0%;
+            left: 15%;
           }
 
           .animation-state4 {
             z-index: 9;
-            bottom: 17%;
-            left: 4%;
-            transform: translate(100%, 50%);
+            bottom: 45px;
+            left: 142px;
           }
         }
 
         &.items3 {
           .animation-state1 {
             z-index: 5;
-            transform: translate(0%, 0%);
             bottom: 20%;
-            right: 2%;
+            right: 50px;
           }
 
           .animation-state2 {
             z-index: 5;
-            transform: translate(0%, 0%);
-            bottom: 23%;
-            right: 0%;
+            bottom: 20%;
+            right: 50px;
           }
 
           .animation-state3 {
-            z-index: 6;
-            transform: translate(0%, 0%);
-            bottom: 14%;
-            right: 2%;
+            z-index: 20;
+            bottom: 20%;
+            right: 50px;
           }
 
           .animation-state4 {
             z-index: 9;
-            bottom: 17%;
-            left: 3%;
-            transform: translate(100%, 50%);
+            bottom: 20px;
+            left: 193px;
           }
         }
       }
     }
-
-
   }
 }
 
 .primary2 {
-  background: url("../images/primary-background-img2.webp");
+  background-image: url("../images/primary-background-img2.webp");
 
   .primary__container {
     .primary__gym-screen {
-        height: 100%;
-        width: 100%;
-        position: absolute;
-        top: 0;
-        left: 0;
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+
       .primary__gym {
         position: absolute;
         left: 0;
@@ -387,28 +372,24 @@
         &.items1 {
           .animation-state1 {
             z-index: 5;
-            top: 6%;
-            right: 8%;
-            transform: translate(-50%, -50%);
+            top: 20%;
+            right: 10.66%;
           }
 
           .animation-state2 {
             z-index: 5;
-            top: 0%;
-            right: 2%;
-            transform: translate(-50%, -50%);
+            top: 10%;
+            right: 6.66%;
           }
 
           .animation-state3 {
-            z-index: 6;
-            top: 29%;
+            z-index: 10;
+            top: 0%;
             right: 5%;
-            transform: translate(0%, -50%);
           }
 
           .animation-state4 {
             z-index: 9;
-            transform: translate(0%, 0%);
             bottom: 10px;
             left: 26px;
           }
@@ -417,79 +398,70 @@
         &.items2 {
           .animation-state1 {
             z-index: 5;
-            transform: translate(100%, -100%);
-            bottom: 21%;
-            left: 17%;
+            bottom: 28%;
+            left: 21.66%;
           }
 
           .animation-state2 {
             z-index: 5;
-            transform: translate(100%, -100%);
-            bottom: 3%;
-            left: 10%;
+            bottom: 27%;
+            left: 19.66%;
           }
 
           .animation-state3 {
-            z-index: 7;
-            transform: translate(0%, 100%);
-            bottom: 132%;
-            left: 17%;
+            z-index: 20;
+            bottom: 13%;
+            left: 13.66%;
+            width: 101%;
           }
 
           .animation-state4 {
             z-index: 9;
-            bottom: 17%;
-            left: 4%;
-            transform: translate(100%, 50%);
+            bottom: 46px;
+            left: 142px;
           }
         }
 
         &.items3 {
           .animation-state1 {
             z-index: 5;
-            transform: translate(0%, 0%);
             bottom: 20%;
             right: 0%;
           }
 
           .animation-state2 {
             z-index: 5;
-            transform: translate(0%, 0%);
-            bottom: 19%;
+            bottom: 20%;
             right: 0%;
           }
 
           .animation-state3 {
             z-index: 6;
-            transform: translate(0%, 0%);
             bottom: 15%;
             right: 0%;
           }
 
           .animation-state4 {
             z-index: 9;
-            bottom: 17%;
-            left: 3%;
-            transform: translate(100%, 50%);
+            bottom: 18px;
+            left: 194px;
           }
         }
       }
     }
-
-
   }
 }
 
 .primary3 {
-  background: url("../images/primary-background-img3.webp");
+  background-image: url("../images/primary-background-img3.webp");
 
   .primary__container {
     .primary__movers-screen {
-        height: 100%;
-        width: 100%;
-        position: absolute;
-        top: 0;
-        left: 0;
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
       .primary__movers {
         position: absolute;
         left: 0;
@@ -504,28 +476,24 @@
         &.items1 {
           .animation-state1 {
             z-index: 5;
-            top: 12%;
-            right: 10%;
-            transform: translate(-100%, 0%);
+            top: 34%;
+            right: 18%;
           }
 
           .animation-state2 {
             z-index: 5;
-            top: 7%;
-            right: 9%;
-            transform: translate(-100%, 0%);
+            top: 23%;
+            right: 18%;
           }
 
           .animation-state3 {
-            z-index: 6;
-            top: 18%;
-            right: 14%;
-            transform: translate(0%, -50%);
+            z-index: 15;
+            top: 0%;
+            right: 15%;
           }
 
           .animation-state4 {
             z-index: 9;
-            transform: translate(0%, 0%);
             bottom: 10px;
             left: 26px;
           }
@@ -533,75 +501,66 @@
 
         &.items2 {
           .animation-state1 {
-            z-index: 5;
-            transform: translate(0%, -50%);
-            top: 0%;
+            z-index: 10;
+            top: 30%;
             right: 0%;
           }
 
           .animation-state2 {
-            z-index: 5;
-            transform: translate(0%, -100%);
-            top: 10%;
+            z-index: 10;
+            top: 23%;
             right: 0%;
           }
 
           .animation-state3 {
-            z-index: 7;
-            transform: translate(0%, -50%);
-            top: 30%;
+            z-index: 15;
+            top: 14%;
             right: 0%;
           }
 
           .animation-state4 {
             z-index: 9;
-            bottom: 17%;
-            left: 4%;
-            transform: translate(100%, 50%);
+            bottom: 45px;
+            left: 142px;
           }
         }
 
         &.items3 {
           .animation-state1 {
             z-index: 5;
-            transform: translate(100%, 0%);
+            left: 34%;
             bottom: 0%;
-            left: 28%;
           }
 
           .animation-state2 {
-            z-index: 5;
-            transform: translate(100%, 0%);
+            z-index: 10;
+            left: 34%;
             bottom: 0%;
-            left: 25%;
           }
 
           .animation-state3 {
-            z-index: 6;
-            transform: translate(0%, 0%);
-            bottom: 1%;
-            left: 22%;
+            z-index: 15;
+            bottom: 3%;
+            left: 24%;
           }
 
           .animation-state4 {
             z-index: 9;
-            bottom: 17%;
-            left: 3%;
-            transform: translate(100%, 50%);
+            bottom: 20px;
+            left: 193px;
           }
         }
       }
     }
-
   }
 }
 
 // ---------- SECOND SECTION -----------
 .second {
-    margin-top: -10px;
-    position: relative;
-    z-index: 3;
-    overflow: hidden;
+  margin-top: -10px;
+  position: relative;
+  z-index: 3;
+  overflow: hidden;
 
   .second__container {
     background: rgb(244, 237, 220);
@@ -720,8 +679,6 @@
   .video__container {
     background: rgb(244, 237, 220);
     aspect-ratio: 1.98/1;
-    
-
 
     iframe {
       border-radius: 20px;
@@ -731,7 +688,7 @@
       aspect-ratio: 1.98/1;
       height: 100%;
 
-      video { 
+      video {
         object-fit: cover;
         width: 100%;
         height: 100%;
@@ -888,7 +845,6 @@
   }
 
   .video {
-
     .video__container {
       video {
         width: 100vw;
@@ -896,10 +852,10 @@
     }
   }
 }
-@media (min-width: 780px) { 
-    body { 
-        overflow: hidden;
-    }
+@media (min-width: 780px) {
+  body {
+    overflow: hidden;
+  }
 }
 @media (max-width: 768px) {
   .header {
@@ -931,7 +887,7 @@
 
       .menuIcon {
         display: flex;
-        transform: translate( calc(-50% - 10px),-50%);
+        transform: translate(calc(-50% - 10px), -50%);
       }
 
       .nav__menuMobile {
@@ -943,7 +899,7 @@
         transform: translateX(-101%);
         transition: transform 0.5s;
         z-index: 10;
-        padding: 12px ;
+        padding: 12px;
 
         &.active {
           left: 50%;
@@ -962,9 +918,8 @@
           width: 100%;
 
           li {
-
-            &:not(:last-child) { 
-                padding-left: 10px;
+            &:not(:last-child) {
+              padding-left: 10px;
             }
             &:last-child {
               position: relative;
@@ -1240,6 +1195,10 @@
     .primary__beauty_pc,
     .primary__gym_pc,
     .primary__movers_pc {
+      display: none;
+    }
+
+    .animation-state_pc {
       display: none;
     }
 
@@ -1727,14 +1686,11 @@
   }
 
   .video {
-
-    .video__container { 
-        iframe {
-            border-radius: 0px;
-          }
+    .video__container {
+      iframe {
+        border-radius: 0px;
+      }
     }
-
-
   }
 
   .footer {
@@ -1781,9 +1737,6 @@
             }
 
             &:last-child {
-       
-                
-
               a {
               }
             }
@@ -1911,14 +1864,22 @@
     }
   }
 
-  .primary1 .primary__container .primary__beauty-screen .primary__animation-items.items1 .animation-state1  { 
+  .primary1
+    .primary__container
+    .primary__beauty-screen
+    .primary__animation-items.items1
+    .animation-state1 {
     z-index: 5;
     top: 0%;
     left: calc(50% + 2vw);
     transform: translate(100%, 100%);
   }
 
-  .primary1 .primary__container .primary__beauty-screen .primary__animation-items.items2 .animation-state1 { 
+  .primary1
+    .primary__container
+    .primary__beauty-screen
+    .primary__animation-items.items2
+    .animation-state1 {
     z-index: 5;
     transform: translate(100%, 100%);
     top: 10%;
