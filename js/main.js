@@ -1,26 +1,4 @@
-// ---------- scene update
-let screens = document.querySelectorAll(".primary");
-let randonScreenBtn = document.querySelector(".randonScreen");
 
-function randonScreen() {
-  var random = Math.floor(Math.random() * screens.length);
-  var randomScreen = screens[random];
-
-  screens.forEach((screen) => {
-    if (screen.classList.contains("show")) {
-      screen.classList.remove("show");
-    }
-  });
-
-  randomScreen.classList.add("show");
-}
-window.addEventListener("load", () => {
-  randonScreen();
-});
-randonScreenBtn.addEventListener('click', function(event) { 
-  event.preventDefault();
-  location.reload();
-})
 // // ---------- Animation
 // механіка колекції пачок на descktop версії
 
@@ -157,6 +135,7 @@ function checkAllElementsDisplayBlock(sectionClass, elementClass) {
           section.classList.add("hidden");
           setTimeout(function () {
             graduallyShowBlock(pageContent);
+            startMyVideo();
           }, 500);
         }, 500);
       }
@@ -196,12 +175,43 @@ document.addEventListener("touchstart", () => {
   }
 });
 
-// відкладене завантаження відео
-
-document.addEventListener("DOMContentLoaded", function () {
+function loadedVideo() { 
   var lazyLoadedVideo = document.getElementById("lazy-loaded-video");
   if (lazyLoadedVideo) {
     var src = lazyLoadedVideo.getAttribute("data-src");
     lazyLoadedVideo.setAttribute("src", src);
   }
-});
+}; 
+
+
+function creatVideoBlock() {
+  document.getElementById("videoPlay").innerHTML = "<div id='player'> </div>";
+
+  // 2. This code loads the IFrame Player API code asynchronously.
+  var tag = document.createElement("script");
+
+  tag.src = "https://www.youtube.com/iframe_api";
+  var firstScriptTag = document.getElementsByTagName("script")[0];
+  firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+}
+
+// 3. This function creates an <iframe> (and YouTube player)
+//    after the API code downloads.
+let player;
+function onYouTubeIframeAPIReady() {
+  player = new YT.Player("player", {
+    videoId: "SZwBK4KCLkg",
+    height: '360',
+    width: '640',
+    playerVars: {
+      rel: 0,
+      autoplay: 1,
+      controls: 0,
+    },
+  });
+}
+
+function startMyVideo () { 
+  creatVideoBlock();
+  onYouTubeIframeAPIReady();
+}

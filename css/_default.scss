@@ -22,7 +22,9 @@ a:focus,
 a:active {
 	outline: none;
 }
-
+a { 
+	cursor: pointer;
+}
 nav,
 footer,
 header,
