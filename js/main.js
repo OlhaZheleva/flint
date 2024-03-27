@@ -323,15 +323,38 @@ function creatVideoBlock() {
 let player = document.getElementById("player");
 
 function onYouTubeIframeAPIReady() {
-  player = new YT.Player("player", {
-    videoId: "QhcLUbHvOto",
-    playerVars: {
-      controls: 1,
-      autoplay: 1,
-      mute: 1,
-    },
-  });
-}
+  let primary1 = document.querySelector(".primary1");
+  let primary2 = document.querySelector(".primary2");
+
+  if (primary1.classList.contains("show")) {
+    player = new YT.Player("player", {
+      videoId: "zBXh7alvNuE",
+      playerVars: {
+        controls: 1,
+        autoplay: 1,
+        mute: 1,
+      },
+    });
+  } else if (primary2.classList.contains("show")) {
+    player = new YT.Player("player", {
+      videoId: "s6VeoH6mPuY",
+      playerVars: {
+        controls: 1,
+        autoplay: 1,
+        mute: 1,
+      },
+    });
+  } else {
+    player = new YT.Player("player", {
+      videoId: "QhcLUbHvOto",
+      playerVars: {
+        controls: 1,
+        autoplay: 1,
+        mute: 1,
+      },
+    });
+  }
+};
 
 function startMyVideo () { 
   creatVideoBlock();

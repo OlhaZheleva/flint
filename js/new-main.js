@@ -1,22 +1,72 @@
 // ---------- scene update
-let screens = document.querySelectorAll(".primary");
-let randonScreenBtn = document.querySelector(".randonScreen");
+const screens = document.querySelectorAll(".primary");
+const screensClasses = ["primary__beauty", "primary__gym", "primary__movers"];
+const imagesSrc = {
+  primary__beauty: {
+    desktop: "images/primary-layer.webp",
+    mobile: "images/beauty-layermob.webp",
+  },
+  primary__gym: {
+    desktop: "images/primary-layer2.webp",
+    mobile: "images/gym-layermob.webp",
+  },
+  primary__movers: {
+    desktop: "images/primary-layer3.webp",
+    mobile: "images/movers-layermob.webp",
+  },
+};
+
+const imagesCache = {
+  primary__beauty: {
+    desktop: new Image(),
+    mobile: new Image(),
+  },
+  primary__gym: {
+    desktop: new Image(),
+    mobile: new Image(),
+  },
+  primary__movers: {
+    desktop: new Image(),
+    mobile: new Image(),
+  },
+};
+
+const BG_KEY = "flint_current-bg";
+
+const defaultScreen = Math.floor(Math.random() * screens.length);
 
 function randonScreen() {
-  var random = Math.floor(Math.random() * screens.length) + 0;
-  var randomScreen = screens[random];
+  const prevIndex = JSON.parse(localStorage.getItem(BG_KEY)) ?? defaultScreen;
+  const nextIndex = (prevIndex + 1) % screens.length;
+  localStorage.setItem(BG_KEY, nextIndex);
+
+  const nextScreenEl = screens[nextIndex];
+  const NEXT_SCREEN_CLASS = screensClasses[nextIndex];
 
   screens.forEach((screen) => {
     if (screen.classList.contains("show")) {
       screen.classList.remove("show");
     }
   });
+  nextScreenEl.classList.add("show");
 
-  randomScreen.classList.add("show");
+  const pcImageEl = nextScreenEl.querySelector(`.${NEXT_SCREEN_CLASS}_pc`);
+  const mobileImageEl = nextScreenEl.querySelector(
+    `.${NEXT_SCREEN_CLASS}_mobile`
+  );
+
+  if (!pcImageEl.src && !mobileImageEl.src) {
+    imagesCache[NEXT_SCREEN_CLASS].desktop.src =
+      imagesSrc[NEXT_SCREEN_CLASS].desktop;
+    imagesCache[NEXT_SCREEN_CLASS].mobile.src =
+      imagesSrc[NEXT_SCREEN_CLASS].mobile;
+
+    pcImageEl.src = imagesCache[NEXT_SCREEN_CLASS].desktop.src;
+    mobileImageEl.src = imagesCache[NEXT_SCREEN_CLASS].mobile.src;
+  }
+
+  return nextIndex;
 }
-window.addEventListener("load", () => {
-  randonScreen();
-});
 
 // // ---------- Animation
 // механіка колекції пачок на descktop версії
@@ -43,7 +93,9 @@ function desktopAnimation(collections) {
     animation1.src = `images/${animName}start.gif`;
     animation2.src = `images/${animName}up.gif`;
     animation3.src = `images/${animName}click.gif`;
+
     animation4.src = `images/${taste}-box.gif`;
+
     gif.src = animation1.src;
 
     function onEnter() {
@@ -51,39 +103,42 @@ function desktopAnimation(collections) {
         gif.classList.add("animation-state2");
         gif.classList.remove("animation-state1");
         gif.src = animation2.src;
-      })
+      });
     }
-    
+
     function onLeave() {
       requestAnimationFrame(() => {
         gif.classList.add("animation-state1");
         gif.classList.remove("animation-state2");
         gif.src = animation1.src;
-      })
+      });
     }
-    
-    gif.addEventListener("mouseenter", onEnter);
-    gif.addEventListener("mouseleave", onLeave);
-    
-    gif.addEventListener("click", function () {
+
+    function onClick() {
+      gif.removeEventListener("click", onClick);
       gif.removeEventListener("mouseenter", onEnter);
       gif.removeEventListener("mouseleave", onLeave);
-      
+
       gif.src = animation3.src;
       requestAnimationFrame(() => {
         gif.classList.add("animation-state3");
         gif.classList.remove("animation-state2");
         gif.classList.remove("animation-state1");
-      })
-      
+      });
+
       setTimeout(function () {
         requestAnimationFrame(() => {
           gif.classList.add("animation-state4");
           gif.classList.remove("animation-state3");
           gif.src = animation4.src;
-        })
+        });
       }, 2000);
-    });
+    }
+
+    gif.addEventListener("mouseenter", onEnter);
+    gif.addEventListener("mouseleave", onLeave);
+
+    gif.addEventListener("click", onClick);
   });
 }
 
@@ -107,40 +162,49 @@ function mobileAnimation(collections) {
 
     gif.src = animation1.src;
 
-    let currentAnimation = 0
-    const animations = [animation1, animation2, animation3, animation4]
+    let currentAnimation = 0;
+    const animations = [animation1, animation2, animation3, animation4];
 
     function nextAnimation() {
       gif.classList.remove(`animation-state${currentAnimation + 1}`);
-      currentAnimation++
+      currentAnimation++;
       gif.classList.add(`animation-state${currentAnimation + 1}`);
       gif.src = animations[currentAnimation].src;
     }
 
     function onTouch() {
-      nextAnimation()
+      nextAnimation();
 
       if (currentAnimation === 2) {
         gif.removeEventListener("touchstart", onTouch);
         setTimeout(() => {
-          nextAnimation()
-        }, 2000)
+          nextAnimation();
+        }, 2000);
       }
     }
-    
+
     gif.addEventListener("touchstart", onTouch);
   });
 }
 
-document.addEventListener("DOMContentLoaded", function () {
-  let gifCollections = document.querySelectorAll(".primary__animation-items");
-  var mediaQuery = window.matchMedia("(min-width: 501px)");
-  
+function initAnimation(currentScreenIndex) {
+  const currentScreen = screens[currentScreenIndex];
+
+  const gifCollections = currentScreen.querySelectorAll(
+    ".primary__animation-items"
+  );
+  const mediaQuery = window.matchMedia("(min-width: 501px)");
+
   if (mediaQuery.matches) {
     desktopAnimation(gifCollections);
   } else {
     mobileAnimation(gifCollections);
   }
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+  const currentScreenIndex = randonScreen();
+  initAnimation(currentScreenIndex);
 });
 
 // mobile menu
@@ -167,7 +231,7 @@ window.addEventListener("scroll", () => {
   document.body.classList.remove("lock");
 });
 
-// ---------- show page content 
+// ---------- show page content
 
 let allState4 = document.querySelectorAll(".animation-state4");
 let primary = document.querySelector(".primary");
@@ -217,11 +281,6 @@ function checkAllElementsDisplayBlock(sectionClass, elementClass) {
 }
 
 function graduallyShowBlock(block) {
-
-  if (block.style.display != "block") { 
-    startMyVideo();
-  };
-
   block.style.display = "block"; // Показуємо блок
 
   // Збільшуємо прозорість блоку поетапно
@@ -238,7 +297,7 @@ function graduallyShowBlock(block) {
 document.addEventListener("click", () => {
   setTimeout(function () {
     checkAllElementsDisplayBlock("show", "animation-state4");
-  }, 3000);
+  }, 4000);
 });
 
 var mediaQuery = window.matchMedia("(max-width: 499px)");
@@ -246,10 +305,9 @@ document.addEventListener("touchstart", () => {
   if (mediaQuery.matches) {
     setTimeout(function () {
       checkAllElementsDisplayBlock("show", "animation-state4");
-    }, 3000);
+    }, 4000);
   }
 });
-
 
 function creatVideoBlock() {
   document.getElementById("videoPlay").innerHTML = "<div id='player'> </div>";
@@ -266,18 +324,51 @@ function creatVideoBlock() {
 //    after the API code downloads.
 let player = document.getElementById("player");
 
+
 function onYouTubeIframeAPIReady() {
-  player = new YT.Player("player", {
-    videoId: "QhcLUbHvOto",
-    playerVars: {
-      controls: 1,
-      autoplay: 1,
-      mute: 1,
-    },
-  });
+  let primary1 = document.querySelector(".primary1");
+  let primary2 = document.querySelector(".primary2");
+
+  if (primary1.classList.contains("show")) {
+    player = new YT.Player("player", {
+      videoId: "zBXh7alvNuE",
+      playerVars: {
+        controls: 1,
+        autoplay: 1,
+        mute: 1,
+      },
+    });
+  } else if (primary2.classList.contains("show")) {
+    player = new YT.Player("player", {
+      videoId: "s6VeoH6mPuY",
+      playerVars: {
+        controls: 1,
+        autoplay: 1,
+        mute: 1,
+      },
+    });
+  } else {
+    player = new YT.Player("player", {
+      videoId: "QhcLUbHvOto",
+      playerVars: {
+        controls: 1,
+        autoplay: 1,
+        mute: 1,
+      },
+    });
+  }
 }
 
-function startMyVideo () { 
+function startMyVideo() {
   creatVideoBlock();
   onYouTubeIframeAPIReady();
 }
+
+window.addEventListener("scroll", function () {
+  if (window.pageYOffset >= 300) {
+    if (!document.getElementById("player")) {
+      startMyVideo();
+    }
+  }
+});
+

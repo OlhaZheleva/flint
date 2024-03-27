@@ -194,6 +194,9 @@
       cursor: pointer;
     }
 
+    .animation-state3 { 
+      pointer-events: none
+    }
     // .screen {
     //     display: none;
     // }
@@ -246,7 +249,7 @@
         min-width: 50px;
         aspect-ratio: 1/1;
         max-width: 79px;
-        background-image: url(../images//primary-unknown.svg);
+        background-image: url(../images/primary-unknown.svg);
         background-repeat: no-repeat;
         background-position: center;
         background-size: 63%;
@@ -256,7 +259,7 @@
 }
 
 .primary1 {
-  background-image: url("../images//primary-background-img.webp");
+  background-image: url("../images/primary-background-img.webp");
 
   .primary__container {
     .primary__beauty-screen {
@@ -360,7 +363,7 @@
 }
 
 .primary2 {
-  background-image: url("../images//primary-background-img2.webp");
+  background-image: url("../images/primary-background-img2.webp");
 
   .primary__container {
     .primary__gym-screen {
@@ -465,7 +468,7 @@
 }
 
 .primary3 {
-  background-image: url("../images//primary-background-img3.webp");
+  background-image: url("../images/primary-background-img3.webp");
 
   .primary__container {
     .primary__movers-screen {
@@ -605,7 +608,7 @@
       margin-top: 62px;
 
       &::before {
-        content: url("../images//second-click.svg");
+        content: url("../images/second-click.svg");
         position: absolute;
         left: 2%;
         bottom: 35%;
@@ -723,7 +726,7 @@
       z-index: 5;
 
       &::before {
-        content: url(../images//second-click.svg);
+        content: url(../images/second-click.svg);
         position: absolute;
         left: -50px;
         top: -30%;
@@ -1258,7 +1261,7 @@
   }
 
   .primary1 {
-    background-image: url("../images//primary-mob.webp");
+    background-image: url("../images/primary-mob.webp");
 
     .primary__container {
       .primary__beauty-screen {
@@ -1327,8 +1330,8 @@
 
             .animation-state4 {
               z-index: 9;
-              bottom: 31px;
-              left: calc(50% + 0px);
+              bottom: 7px;
+              left: calc(50% + 4px);
               transform: translate(-50%, 0%);
             }
           }
@@ -1357,9 +1360,9 @@
 
             .animation-state4 {
               z-index: 9;
-              bottom: 2px;
+              bottom: 7px;
               left: inherit;
-              right: calc(50% - 70px);
+              right: calc(50% - 64px);
               transform: translate(60%, 0px);
             }
           }
@@ -1369,7 +1372,7 @@
   }
 
   .primary2 {
-    background-image: url("../images//primary-mob2.webp");
+    background-image: url("../images/primary-mob2.webp");
 
     .primary__container {
       .primary__gym-screen {
@@ -1494,13 +1497,13 @@
   }
 
   .primary3 {
-    background-image: url("../images//primary-mob3.webp");
+    background-image: url("../images/primary-mob3.webp");
 
     .primary__container {
       .primary__movers-screen {
         .primary__movers_mobile {
           position: absolute;
-          top: 0;
+          top: -5px;
           left: 0;
           transform: none;
           width: 100%;
@@ -1644,11 +1647,7 @@
         line-height: 48px;
 
         &::before {
-          left: inherit;
-          right: 0%;
-          bottom: 30%;
-          transform: translate(50%, 0%);
-          rotate: 90deg;
+          display: none;
         }
       }
 
@@ -1802,14 +1801,10 @@
       }
 
       .second__title {
-        margin-top: 54px;
+        margin-top: 30px;
 
         &::before {
-          left: inherit;
-          right: 0%;
-          bottom: 30%;
-          transform: translate(50%, 0%);
-          rotate: 90deg;
+          display: none;
         }
       }
 
