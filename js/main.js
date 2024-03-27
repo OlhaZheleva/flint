@@ -200,7 +200,7 @@ function initAnimation (currentScreenIndex) {
   const mediaQuery = window.matchMedia("(min-width: 501px)");
   
   if (mediaQuery.matches) {
-    desktopAnimation(gifCollections);
+    // desktopAnimation(gifCollections);
   } else {
     // mobileAnimation(gifCollections);
   }
