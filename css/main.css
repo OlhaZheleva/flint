@@ -366,14 +366,14 @@ span {
   min-width: 50px;
   aspect-ratio: 1/1;
   max-width: 79px;
-  background-image: url(/../images/primary-unknown.svg);
+  background-image: url(../images//primary-unknown.svg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: 63%;
 }
 
 .primary1 {
-  background-image: url("/../images/primary-background-img.webp");
+  background-image: url("../images//primary-background-img.webp");
 }
 .primary1 .primary__container .primary__beauty-screen {
   height: 100%;
@@ -453,7 +453,7 @@ span {
 }
 
 .primary2 {
-  background-image: url("/../images/primary-background-img2.webp");
+  background-image: url("../images//primary-background-img2.webp");
 }
 .primary2 .primary__container .primary__gym-screen {
   height: 100%;
@@ -534,7 +534,7 @@ span {
 }
 
 .primary3 {
-  background-image: url("/../images/primary-background-img3.webp");
+  background-image: url("../images//primary-background-img3.webp");
 }
 .primary3 .primary__container .primary__movers-screen {
   height: 100%;
@@ -647,7 +647,7 @@ span {
   margin-top: 62px;
 }
 .second .second__container .second__title::before {
-  content: url("/../images/second-click.svg");
+  content: url("../images//second-click.svg");
   position: absolute;
   left: 2%;
   bottom: 35%;
@@ -743,7 +743,7 @@ span {
   z-index: 5;
 }
 .footer .footer__container .footer__title::before {
-  content: url(/../images/second-click.svg);
+  content: url(../images//second-click.svg);
   position: absolute;
   left: -50px;
   top: -30%;
@@ -1121,7 +1121,7 @@ span {
     bottom: 10vh;
   }
   .primary1 {
-    background-image: url("/../images/primary-mob.webp");
+    background-image: url("../images//primary-mob.webp");
   }
   .primary1 .primary__container .primary__beauty-screen .primary__beauty_mobile {
     position: absolute;
@@ -1203,7 +1203,7 @@ span {
     transform: translate(60%, 0px);
   }
   .primary2 {
-    background-image: url("/../images/primary-mob2.webp");
+    background-image: url("../images//primary-mob2.webp");
   }
   .primary2 .primary__container .primary__gym-screen::after {
     width: 100%;
@@ -1298,7 +1298,7 @@ span {
     transform: none;
   }
   .primary3 {
-    background-image: url("/../images/primary-mob3.webp");
+    background-image: url("../images//primary-mob3.webp");
   }
   .primary3 .primary__container .primary__movers-screen .primary__movers_mobile {
     position: absolute;
