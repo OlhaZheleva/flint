@@ -207,7 +207,7 @@ function initAnimation (currentScreenIndex) {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-  // const currentScreenIndex = randonScreen();
+  const currentScreenIndex = randonScreen();
   // initAnimation(currentScreenIndex)
 });
 
