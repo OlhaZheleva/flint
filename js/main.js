@@ -75,8 +75,11 @@ const states = {
 };
 
 function desktopAnimation(collections) {
-  collections.forEach(function (collection) {
+  for (let collection of collections) {
     const gif = collection.querySelector(".animation-state1");
+    if (!gif) {
+      continue
+    }
     gif.classList.add("animation-state_pc");
 
     const animation1 = new Image();
@@ -135,7 +138,7 @@ function desktopAnimation(collections) {
     gif.addEventListener("mouseleave", onLeave);
     
     gif.addEventListener("click", onClick);
-  });
+  };
 }
 
 function mobileAnimation(collections) {
@@ -208,7 +211,7 @@ function initAnimation (currentScreenIndex) {
 
 document.addEventListener("DOMContentLoaded", function () {
   const currentScreenIndex = randonScreen();
-  // initAnimation(currentScreenIndex)
+  initAnimation(currentScreenIndex)
 });
 
 // mobile menu
