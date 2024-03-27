@@ -211,7 +211,7 @@ function initAnimation (currentScreenIndex) {
 
 document.addEventListener("DOMContentLoaded", function () {
   const currentScreenIndex = randonScreen();
-  initAnimation(currentScreenIndex)
+  // initAnimation(currentScreenIndex)
 });
 
 // mobile menu
