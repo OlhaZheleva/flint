@@ -161,10 +161,10 @@ function mobileAnimation(collections) {
 
     animation4.src = `images/${taste}Mob-box.gif`;
 
-    document.appendChild(animation1)
-    document.appendChild(animation2)
-    document.appendChild(animation3)
-    document.appendChild(animation4)
+    document.body.appendChild(animation1)
+    document.body.appendChild(animation2)
+    document.body.appendChild(animation3)
+    document.body.appendChild(animation4)
 
     gif.src = animation1.src;
 
