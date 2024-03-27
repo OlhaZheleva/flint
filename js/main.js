@@ -148,6 +148,11 @@ function mobileAnimation(collections) {
     const animation3 = new Image();
     const animation4 = new Image();
 
+    animation1.style.display = 'none';
+    animation2.style.display = 'none';
+    animation3.style.display = 'none';
+    animation4.style.display = 'none';
+
     const taste = gif.getAttribute("data-taste");
     const animName = gif.getAttribute("data-anim-name-mob");
     animation1.src = `images/${animName}start.gif`;
@@ -155,6 +160,11 @@ function mobileAnimation(collections) {
     animation3.src = `images/${animName}click.gif`;
 
     animation4.src = `images/${taste}Mob-box.gif`;
+
+    document.appendChild(animation1)
+    document.appendChild(animation2)
+    document.appendChild(animation3)
+    document.appendChild(animation4)
 
     gif.src = animation1.src;
 
