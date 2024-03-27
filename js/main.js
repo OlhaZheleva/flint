@@ -202,7 +202,7 @@ function initAnimation (currentScreenIndex) {
   if (mediaQuery.matches) {
     desktopAnimation(gifCollections);
   } else {
-    mobileAnimation(gifCollections);
+    // mobileAnimation(gifCollections);
   }
 }
 
