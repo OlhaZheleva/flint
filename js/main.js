@@ -240,7 +240,7 @@ window.addEventListener("scroll", () => {
 
 
 
-// ---------- show page content 
+// -------- show page content 
 
 let allState4 = document.querySelectorAll(".animation-state4");
 let primary = document.querySelector(".primary");
