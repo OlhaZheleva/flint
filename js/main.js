@@ -33,10 +33,10 @@ const imagesCache = {
 
 const BG_KEY = "flint_current-bg"
 
-const defaultScreen = Math.floor(Math.random() * screens.length);
+const defaultScreen = JSON.stringify(Math.floor(Math.random() * screens.length));
 
 function randonScreen() {
-  const prevIndex = JSON.parse(localStorage.getItem(BG_KEY)) ?? defaultScreen;
+  const prevIndex = JSON.parse(localStorage.getItem(BG_KEY) ?? defaultScreen);
   const nextIndex = (prevIndex + 1) % screens.length;
   localStorage.setItem(BG_KEY, nextIndex);
 
@@ -200,9 +200,9 @@ function initAnimation (currentScreenIndex) {
   const mediaQuery = window.matchMedia("(min-width: 501px)");
   
   if (mediaQuery.matches) {
-    // desktopAnimation(gifCollections);
+    desktopAnimation(gifCollections);
   } else {
-    // mobileAnimation(gifCollections);
+    mobileAnimation(gifCollections);
   }
 }
 
