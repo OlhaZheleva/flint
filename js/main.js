@@ -338,3 +338,10 @@ function startMyVideo () {
   onYouTubeIframeAPIReady();
 };
 
+window.addEventListener('scroll', function() {
+  if (window.pageYOffset >= 300) {
+    if (!document.getElementById('player'))  {
+      startMyVideo();
+    }
+  }
+});
